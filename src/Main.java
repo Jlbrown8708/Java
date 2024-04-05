@@ -55,15 +55,43 @@ public static void main (String[] args){
 
     public static int calculateHighScorePosition(int playerScore) {
 
-        int position = 4;
+       int position;
         if (playerScore >= 1000) {
             position = 1;
         } else if (playerScore >= 500) {
             position = 2;
         } else if (playerScore >= 100) {
             position = 3;
-        }
+        } else
+            position = 4;
 
         return position;
+  
     }
+  public static void main (String[] args){
+
+    System.out.println("New score is " + calculateScore("Tim", 500));
+    System.out.println("New score is " + calculateScore(10));
+}
+
+public static int calculateScore(String playerName, int score) {
+
+    System.out.println("Player " + playerName + " scored " + score + " points");
+    return score * 1000;
+}
+
+public static int calculateScore(int score) {
+
+    return calculateScore("Anonymous", score);
+}
+
+public static int calculateScore() {
+
+    System.out.println("No player name, no player score.");
+    return 0;
+}
+
+
+
+
 }
